@@ -1,0 +1,25 @@
+{
+  "name": "url-shortener",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm i && concurrently --kill-others \"npm run client\" \"npm run server\"",
+    "client": "cd client && npm i && npm run start",
+    "server": "cd server && npm i && npm run start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LGWayneq/URL-Shortener.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LGWayneq/URL-Shortener/issues"
+  },
+  "homepage": "https://github.com/LGWayneq/URL-Shortener#readme",
+  "dependencies": {
+    "@nestjs/cli": "^9.2.0"
+  }
+}

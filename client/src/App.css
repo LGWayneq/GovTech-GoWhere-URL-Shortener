@@ -1,0 +1,35 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #c6d8ff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
+
+.input-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.url-input {
+  width: 500px;
+  height: 40px;
+  border-radius: 5px;
+  margin-right: 10px;
+  font-size: 24px;
+}
+
+.generate-button {
+  border-radius: 10px;
+  font-size: 24px;
+  padding: 10px;
+  background-color: #c3ffed;
+}
+
