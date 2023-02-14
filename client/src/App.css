@@ -31,5 +31,10 @@
   font-size: 24px;
   padding: 10px;
   background-color: #c3ffed;
+  cursor: pointer;
+}
+
+.generate-button:active {
+  background-color: #75a395;
 }
 
