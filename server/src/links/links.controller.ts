@@ -1,7 +1,7 @@
 import { Controller, Get, Post, Param, Body } from '@nestjs/common';
 import { LinksService } from './links.service';
 import { Link } from './schemas/link.schema';
-import { LinkDto } from './schemas/linkDto';
+import { LinkDto } from './schemas/LinkDto';
 
 @Controller('links')
 export class LinksController {
