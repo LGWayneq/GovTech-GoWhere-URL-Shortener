@@ -1,8 +1,6 @@
 import axios from "axios";
 
-const BASE_API_URL_DEV = "http://localhost:3001/"
 const BASE_API_URL_PROD = "https://url-shortener-server-eta.vercel.app/"
-const BASE_CLIENT_URL_DEV = "localhost:3001/"
 const BASE_CLIENT_URL_PROD = "url-shortener-lgw.vercel.app/"
 const LINKS_CONTROLLER = "links/"
 const CREATE_LINK_ENDPOINT = "addlink/"
@@ -10,7 +8,7 @@ const GET_LINK_ENDPOINT = "redirect/"
 
 const postUrl = async (fullUrl) => {
     const res = await axios.post(
-        BASE_API_URL_DEV + LINKS_CONTROLLER + CREATE_LINK_ENDPOINT, 
+        BASE_API_URL_PROD + LINKS_CONTROLLER + CREATE_LINK_ENDPOINT, 
         {
             "fullUrl": fullUrl
         }
@@ -20,7 +18,7 @@ const postUrl = async (fullUrl) => {
 
 const getUrl = async (shortUrl) => {
     const res = await axios.get(
-        BASE_API_URL_DEV + LINKS_CONTROLLER + GET_LINK_ENDPOINT + shortUrl
+        BASE_CLIENT_URL_PROD + LINKS_CONTROLLER + GET_LINK_ENDPOINT + shortUrl
     )
     return res;
 }
