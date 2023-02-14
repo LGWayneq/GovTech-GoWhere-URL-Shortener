@@ -1,7 +1,7 @@
 import { Model } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
 import { Link, LinkDocument } from './schemas/link.schema';
-import { shortenUrl } from 'src/utils/LinksUtils';
+import { shortenUrl } from '../utils/LinksUtils';
 
 export class LinksService {
   constructor(@InjectModel(Link.name) private linkModel: Model<LinkDocument>) {}
