@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_API_URL_PROD = "https://url-shortener-server-eta.vercel.app/"
+const BASE_API_URL_PROD = "url-shortener-server-eta.vercel.app/"
 const BASE_CLIENT_URL_PROD = "url-shortener-lgw.vercel.app/"
 const LINKS_CONTROLLER = "links/"
 const CREATE_LINK_ENDPOINT = "addlink/"
