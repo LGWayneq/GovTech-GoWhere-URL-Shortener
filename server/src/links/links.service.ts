@@ -1,13 +1,13 @@
 import { Model } from 'mongoose';
-import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Link, LinkDocument } from './schemas/link.schema';
+import { shortenUrl } from 'src/utils/LinksUtils';
 
 export class LinksService {
   constructor(@InjectModel(Link.name) private linkModel: Model<LinkDocument>) {}
 
-  findOne(id: string): Promise<Link> {
-    return this.linkModel.findById(id).exec();
+  findOne(shortUrl: string): Promise<Link> {
+    return this.linkModel.findOne({ "shortUrl": shortUrl }).exec();
   }
 
   async findAll(): Promise<Link[]> {
@@ -15,7 +15,10 @@ export class LinksService {
   }
 
   createShortUrl(fullUrl: string): Promise<Link> {
-    const link = new this.linkModel({ fullUrl:fullUrl });
+    const link = new this.linkModel({ 
+      shortUrl: shortenUrl(fullUrl),
+      fullUrl: fullUrl 
+    });
 
     return link.save();
   }

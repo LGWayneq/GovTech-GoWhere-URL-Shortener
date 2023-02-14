@@ -7,6 +7,9 @@ export type LinkDocument = HydratedDocument<Link>;
 export class Link {
   @Prop({ required: true })
   fullUrl: string;
+
+  @Prop({ required: true })
+  shortUrl: string;
 }
 
 export const LinkSchema = SchemaFactory.createForClass(Link);
