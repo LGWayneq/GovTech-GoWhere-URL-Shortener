@@ -4,6 +4,7 @@ const BASE_API_URL_DEV = "http://localhost:3001/"
 const BASE_API_URL_PROD = "https://url-shortener-server-eta.vercel.app/"
 const LINKS_CONTROLLER = "links/"
 const CREATE_LINK_ENDPOINT = "addlink/"
+const GET_LINK_ENDPOINT = "redirect/"
 
 const postUrl = async (fullUrl) => {
     const res = await axios.post(
@@ -15,4 +16,11 @@ const postUrl = async (fullUrl) => {
     return res;
 }
 
-export { postUrl };
+const getUrl = async (shortUrl) => {
+    const res = await axios.get(
+        BASE_API_URL_DEV + LINKS_CONTROLLER + GET_LINK_ENDPOINT + shortUrl
+    )
+    return res;
+}
+
+export { postUrl, getUrl };
