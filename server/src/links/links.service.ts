@@ -14,9 +14,18 @@ export class LinksService {
     return this.linkModel.find().exec();
   }
 
-  createShortUrl(fullUrl: string): Promise<Link> {
+  async createShortUrl(fullUrl: string): Promise<Link> {
+    var shortUrl = shortenUrl(fullUrl);
+    
+    // check if generated short url exists
+    const prevLink = await this.linkModel.findOne({ "shortUrl": shortUrl }).exec();
+    if (prevLink != null && prevLink.fullUrl == fullUrl) {
+      // if previous full url is the same, can return previously created Link object.
+      return prevLink; 
+    }
+
     const link = new this.linkModel({ 
-      shortUrl: shortenUrl(fullUrl),
+      shortUrl: shortUrl,
       fullUrl: fullUrl 
     });
 
