@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { postUrl } from '../utils/ApiServices';
 import './Home.css';
 
+const BASE_CLIENT_URL = "http://localhost:3000/"
+
 function Home() {
   const [fullUrl, setFullUrl] = useState("");
   const [shortUrl, setShortUrl] = useState("");
@@ -33,7 +35,9 @@ function Home() {
         </div>
         {shortUrl !== "" && <>
           <b>Your new URL: </b>
-          <body>url-shortener-lgw.vercel.app/{shortUrl}</body>
+          <a href={shortUrl}>
+            {BASE_CLIENT_URL}{shortUrl}
+          </a>
         </>}
       </header>
     </div>

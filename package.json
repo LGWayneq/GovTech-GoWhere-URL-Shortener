@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/LGWayneq/URL-Shortener#readme",
   "dependencies": {
-    "@nestjs/cli": "^9.2.0"
+    "@nestjs/cli": "^9.2.0",
+    "concurrently": "^7.6.0"
   }
 }
